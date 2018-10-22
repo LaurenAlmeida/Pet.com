@@ -1,0 +1,17 @@
+begin;
+create table usuario (foto_perfil varchar(255),nome varchar(255), cpf varchar(15) primary key, dt_nascimento date, cep varchar(9),cidade varchar(255),estado varchar(255),rua varchar(255),bairro varchar(255),num int(10),celular varchar(12),email varchar(255),senha varchar(255));
+create table help ( id integer AUTO_INCREMENT primary key,foto_help varchar(255),nm_pet varchar(50),cpf varchar(15), nm_responsavel varchar(255), situacao int(5),ajuda varchar(255),descricao varchar(255),foreign key (cpf) REFERENCES usuario (cpf));
+create table raca (cd_raca integer AUTO_INCREMENT primary key, nm_raca varchar(255));
+create table tipo (cd_tipo integer AUTO_INCREMENT primary key, nm_tipo varchar(255));
+create table pet (id_pet integer AUTO_INCREMENT primary key,cpf varchar(15), cd_tipo integer, cd_raca integer, descricao varchar(255), foreign key (cpf) REFERENCES usuario (cpf), foreign key (cd_tipo) REFERENCES tipo (cd_tipo), foreign key (cd_raca) REFERENCES raca (cd_raca));
+create table adote (id_adote integer AUTO_INCREMENT primary key,foto varchar(255), cpf varchar(15), nm varchar(50), cd_tipo integer,cd_raca integer, sexo varchar(50),idade varchar(20), foreign key (cpf) REFERENCES usuario (cpf), foreign key (cd_tipo) REFERENCES tipo (cd_tipo), foreign key (cd_raca) REFERENCES raca (cd_raca));
+create table adocao (id_help integer AUTO_INCREMENT primary key, dt_adocao date,nm_dono varchar(255),nm_pet varchar(255),end_dono varchar(255), tel int(12),cel int(12),cpf_dono varchar(15),foreign key (id_help) REFERENCES help (id),foreign key (cpf_dono) REFERENCES usuario (cpf));
+insert into tipo VALUES ('01','ave');
+insert into tipo VALUES ('02','canino');
+insert into tipo VALUES ('03','felino');
+insert into tipo VALUES ('04','roedores');
+insert into raca VALUES ('011','periquito');
+insert into raca VALUES ('021','cachorro');
+insert into raca VALUES ('031','gato');
+insert into raca VALUES ('041','hamster');
+commit;
