@@ -1,0 +1,59 @@
+@CHARSET "ISO-8859-1";
+a{
+    text-decoration: none;
+    color: blue;
+    
+    	
+}
+#divEsqTopo {
+	float: left;
+	width: 20%;
+        height: 115px;
+        background-color: chocolate;
+}
+
+#divCentralTopo {
+	float: left;
+	width: 80%;
+        height: 115px; //altura        
+	text-align: center;
+        background-color: chocolate;
+}
+
+
+
+
+
+#divMenuLateral{
+  	float: left;
+	width: 14%;
+        height: 400px;
+        background-color: yellow;  
+    
+}
+#espaco{
+  	float: left;
+	width: 1%;
+        height: 400px;
+        background-color: white; 
+       
+}
+#divCentral{
+  	float: left;
+	width: 85%;
+        height: 400px;
+        background-color: white; 
+       
+}
+#divRodapeEsq{
+    	float: left;
+	width: 30%;
+        height: 135px;
+        background-color: chocolate;
+}
+#divRodapeCentro{
+    	float: left;
+	width: 70%;
+        height: 135px;
+        background-color: chocolate;
+}
